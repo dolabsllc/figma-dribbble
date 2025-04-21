@@ -1,0 +1,12 @@
+{
+  "name": "figma-dribbble-plugin",
+  "version": "1.0.0",
+  "description": "Plugin de Figma para buscar inspiración en Dribbble",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["figma", "dribbble", "plugin"],
+  "author": "",
+  "license": "MIT"
+}
