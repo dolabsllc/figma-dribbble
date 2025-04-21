@@ -29,7 +29,7 @@ exports.handler = async function(event, context) {
   try {
     console.log("Iniciando solicitud de token para consulta:", query);
     
-    // Obtener token de Dribbble con las nuevas credenciales
+    // Obtener token de Dribbble con las nuevas credenciales válidas
     const tokenUrl = 'https://dribbble.com/oauth/token';
     const tokenOptions = {
       method: 'POST',
@@ -37,8 +37,8 @@ exports.handler = async function(event, context) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        client_id: '806d44da21888313d538a5c7dc8392945ae88357349afd103b02c6da04c00944',
-        client_secret: '2e72c615f5d6f525460502cf169f370cacce0994175cff6e4db3dbf313836312',
+        client_id: '1a13100c4f8c7ffff029e90d556446d176048df182a5df3c287e392964338dd1',
+        client_secret: '23d8acc0ba52d252bb26682b6c4bf0df3b394686ebec4076ca308a6599f7e454',
         grant_type: 'client_credentials'
       })
     };
@@ -56,7 +56,7 @@ exports.handler = async function(event, context) {
     }
     
     const tokenData = await tokenResponse.json();
-    console.log("Token obtenido correctamente");
+    console.log("Token obtenido correctamente:", tokenData);
     const accessToken = tokenData.access_token;
 
     // Buscar en Dribbble
@@ -101,7 +101,7 @@ exports.handler = async function(event, context) {
 
 // Función para obtener resultados de respaldo
 function getFallbackResults(query, headers) {
-  // Crear una respuesta de ejemplo con 5 imágenes ficticias
+  // Crear una respuesta de ejemplo con imágenes ficticias
   const mockShots = [
     {
       id: "1",
